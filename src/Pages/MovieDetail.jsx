@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+const API_KEY = import.meta.env.VITE_OMDB_KEY;
 
 function MovieDetail() {
   const { id } = useParams();
@@ -8,7 +9,7 @@ function MovieDetail() {
   useEffect(() => {
     async function getMovie() {
       const res = await fetch(
-        `https://www.omdbapi.com/?apikey=59eebd91&i=${id}`,
+        `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`,
       );
       const data = await res.json();
       setMovie(data);

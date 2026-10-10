@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import MovieList from "../Components/MovieList";
+const API_KEY = import.meta.env.VITE_OMDB_KEY;
 
 function Home() {
   const [movies, setMovies] = useState([]);
@@ -9,7 +10,7 @@ function Home() {
   const fetchMovies = async (query) => {
     setLoading(true);
     const response = await fetch(
-      `https://www.omdbapi.com/?apikey=59eebd91&s=${query}`,
+      `https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`,
     );
     const data = await response.json();
     console.log(data);
