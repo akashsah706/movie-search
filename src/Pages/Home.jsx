@@ -8,7 +8,7 @@ function Home() {
 
 const fetchMovies =async (query)=>{
   setLoading(true);
-  const response = await fetch(`http://www.omdbapi.com/?apikey=59eebd91&s=${query}`)
+  const response = await fetch(`https://www.omdbapi.com/?apikey=59eebd91&s=${query}`)
   const data = await response.json();
   console.log(data);
   
